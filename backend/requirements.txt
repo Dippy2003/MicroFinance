@@ -1,0 +1,20 @@
+# Backend dependencies for the MicroLoan AI Agent.
+# Pinned to compatible ranges; exact versions resolve at install time.
+
+# Web framework + ASGI server
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+
+# Settings / env loading
+python-dotenv>=1.0,<2.0
+
+# Agents / orchestration (used from Stage 2). pydantic-ai brings pydantic v2.
+pydantic>=2.7,<3.0
+pydantic-ai-slim[groq]>=0.0.20
+
+# RAG store client (used from Stage 6)
+supabase>=2.6,<3.0
+
+# Local embedding model for RAG (Stage 6). Runs on CPU, 384-dim vectors.
+# Groq serves no embedding model, so embeddings are local.
+sentence-transformers>=3.0,<6.0
