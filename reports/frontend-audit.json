@@ -146,7 +146,7 @@
           "range": ">=3.0.0 <3.1.5"
         },
         {
-          "source": 1147649,
+          "source": 1147878,
           "name": "fast-uri",
           "dependency": "fast-uri",
           "title": "fast-uri vulnerable to host confusion via failed IDN canonicalization",
@@ -594,7 +594,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.24",
+        "version": "15.5.25",
         "isSemVerMajor": false
       }
     },
@@ -681,7 +681,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.24",
+        "version": "15.5.25",
         "isSemVerMajor": false
       }
     },
@@ -716,7 +716,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.24",
+        "version": "15.5.25",
         "isSemVerMajor": false
       }
     },
