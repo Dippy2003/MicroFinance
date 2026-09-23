@@ -816,7 +816,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.25",
+        "version": "15.5.26",
         "isSemVerMajor": false
       }
     },
@@ -903,7 +903,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.25",
+        "version": "15.5.26",
         "isSemVerMajor": false
       }
     },
@@ -1000,7 +1000,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.25",
+        "version": "15.5.26",
         "isSemVerMajor": false
       }
     },
