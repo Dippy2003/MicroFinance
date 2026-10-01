@@ -543,10 +543,26 @@
             "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
           },
           "range": "<4.13.5"
+        },
+        {
+          "source": 1240640,
+          "name": "hono",
+          "dependency": "hono",
+          "title": "hono/jsx renders plain strings unescaped in boundary components, leading to XSS",
+          "url": "https://github.com/advisories/GHSA-hxh3-vqpv-xpqv",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-79"
+          ],
+          "cvss": {
+            "score": 4.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": "<4.13.7"
         }
       ],
       "effects": [],
-      "range": "<=4.13.4",
+      "range": "<=4.13.6",
       "nodes": [
         "node_modules/hono"
       ],
@@ -966,7 +982,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.26",
+        "version": "15.5.27",
         "isSemVerMajor": false
       }
     },
@@ -1053,7 +1069,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.26",
+        "version": "15.5.27",
         "isSemVerMajor": false
       }
     },
@@ -1150,7 +1166,7 @@
       ],
       "fixAvailable": {
         "name": "next",
-        "version": "15.5.26",
+        "version": "15.5.27",
         "isSemVerMajor": false
       }
     },
