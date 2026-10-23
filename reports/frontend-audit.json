@@ -873,10 +873,26 @@
             "vectorString": null
           },
           "range": "<=10.7.0"
+        },
+        {
+          "source": 1242883,
+          "name": "ip-address",
+          "dependency": "ip-address",
+          "title": "ip-address: Address6 matches a zone identifier in quadratic time ahead of its length limit, allowing a single long string to stall the process",
+          "url": "https://github.com/advisories/GHSA-rxp7-6hxx-x8q5",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<=10.7.3"
         }
       ],
       "effects": [],
-      "range": "<=10.7.0",
+      "range": "<=10.7.3",
       "nodes": [
         "node_modules/ip-address"
       ],
@@ -1206,6 +1222,38 @@
             "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L"
           },
           "range": ">=15.0.0 <15.5.27"
+        },
+        {
+          "source": 1242817,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when SVG files are used",
+          "url": "https://github.com/advisories/GHSA-2464-fhr4-w9xw",
+          "severity": "critical",
+          "cwe": [
+            "CWE-1395"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=10.0.0 <=15.5.27"
+        },
+        {
+          "source": 1242819,
+          "name": "next",
+          "dependency": "next",
+          "title": "Next.js: Denial of Service in App Router using Server Actions",
+          "url": "https://github.com/advisories/GHSA-p3m5-59mp-jv5r",
+          "severity": "high",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": ">=13.0.0 <=15.5.27"
         },
         "postcss",
         "sharp"
