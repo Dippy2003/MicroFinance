@@ -139,22 +139,6 @@
       ],
       "fixAvailable": true
     },
-    "@ts-morph/common": {
-      "name": "@ts-morph/common",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "fast-glob"
-      ],
-      "effects": [
-        "ts-morph"
-      ],
-      "range": "0.2.0 - 0.24.0 || 0.26.0 - 0.27.0",
-      "nodes": [
-        "node_modules/@ts-morph/common"
-      ],
-      "fixAvailable": true
-    },
     "baseline-browser-mapping": {
       "name": "baseline-browser-mapping",
       "severity": "moderate",
@@ -181,6 +165,35 @@
       "range": ">=2.0.0 <2.11.0",
       "nodes": [
         "node_modules/baseline-browser-mapping"
+      ],
+      "fixAvailable": true
+    },
+    "body-parser": {
+      "name": "body-parser",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1243074,
+          "name": "body-parser",
+          "dependency": "body-parser",
+          "title": "body-parser vulnerable to Denial of Service via trailing bytes after a compressed request body",
+          "url": "https://github.com/advisories/GHSA-27r3-jxmh-p828",
+          "severity": "high",
+          "cwe": [
+            "CWE-248"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=2.0.0 <2.4.0"
+        }
+      ],
+      "effects": [],
+      "range": "2.0.0 - 2.3.0",
+      "nodes": [
+        "node_modules/body-parser"
       ],
       "fixAvailable": true
     },
@@ -299,41 +312,6 @@
       ],
       "fixAvailable": true
     },
-    "braces": {
-      "name": "braces",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        {
-          "source": 1240992,
-          "name": "braces",
-          "dependency": "braces",
-          "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
-          "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
-          "severity": "high",
-          "cwe": [
-            "CWE-674"
-          ],
-          "cvss": {
-            "score": 7.5,
-            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
-          },
-          "range": "<=3.0.3"
-        }
-      ],
-      "effects": [
-        "micromatch"
-      ],
-      "range": "*",
-      "nodes": [
-        "node_modules/braces"
-      ],
-      "fixAvailable": {
-        "name": "shadcn",
-        "version": "1.0.0",
-        "isSemVerMajor": true
-      }
-    },
     "browserslist": {
       "name": "browserslist",
       "severity": "high",
@@ -379,27 +357,6 @@
         "node_modules/browserslist"
       ],
       "fixAvailable": true
-    },
-    "fast-glob": {
-      "name": "fast-glob",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "micromatch"
-      ],
-      "effects": [
-        "@ts-morph/common",
-        "shadcn"
-      ],
-      "range": "*",
-      "nodes": [
-        "node_modules/fast-glob"
-      ],
-      "fixAvailable": {
-        "name": "shadcn",
-        "version": "1.0.0",
-        "isSemVerMajor": true
-      }
     },
     "fast-uri": {
       "name": "fast-uri",
@@ -536,10 +493,60 @@
             "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N"
           },
           "range": ">=3.0.0 <3.1.8"
+        },
+        {
+          "source": 1243098,
+          "name": "fast-uri",
+          "dependency": "fast-uri",
+          "title": "fast-uri vulnerable to URI scheme spoofing via percent-encoded scheme decoding",
+          "url": "https://github.com/advisories/GHSA-w74x-v6f9-j3xg",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-172",
+            "CWE-180"
+          ],
+          "cvss": {
+            "score": 6.1,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+          },
+          "range": ">=3.0.0 <3.1.9"
+        },
+        {
+          "source": 1243101,
+          "name": "fast-uri",
+          "dependency": "fast-uri",
+          "title": "fast-uri vulnerable to improper path equivalence in relative reference normalization",
+          "url": "https://github.com/advisories/GHSA-xhq7-xmqj-769h",
+          "severity": "low",
+          "cwe": [
+            "CWE-41"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": ">=3.0.0 <3.1.9"
+        },
+        {
+          "source": 1243107,
+          "name": "fast-uri",
+          "dependency": "fast-uri",
+          "title": "fast-uri vulnerable to scheme injection via an unescaped first-segment colon in suffix references",
+          "url": "https://github.com/advisories/GHSA-333x-w4r6-6crp",
+          "severity": "low",
+          "cwe": [
+            "CWE-41",
+            "CWE-116"
+          ],
+          "cvss": {
+            "score": 3.7,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N"
+          },
+          "range": ">=3.0.0 <3.1.9"
         }
       ],
       "effects": [],
-      "range": "3.0.0 - 3.1.7",
+      "range": "3.0.0 - 3.1.8",
       "nodes": [
         "node_modules/fast-uri"
       ],
@@ -960,26 +967,6 @@
         "node_modules/js-yaml"
       ],
       "fixAvailable": true
-    },
-    "micromatch": {
-      "name": "micromatch",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "braces"
-      ],
-      "effects": [
-        "fast-glob"
-      ],
-      "range": ">=0.2.0",
-      "nodes": [
-        "node_modules/micromatch"
-      ],
-      "fixAvailable": {
-        "name": "shadcn",
-        "version": "1.0.0",
-        "isSemVerMajor": true
-      }
     },
     "nanoid": {
       "name": "nanoid",
@@ -1468,19 +1455,14 @@
       "severity": "high",
       "isDirect": true,
       "via": [
-        "fast-glob",
-        "ts-morph"
+        "zod"
       ],
       "effects": [],
-      "range": "<=0.0.0-rc-20261007105214 || >=2.0.0",
+      "range": "<=0.0.0-rc-20261007105214 || 2.0.0 - 4.21.5",
       "nodes": [
         "node_modules/shadcn"
       ],
-      "fixAvailable": {
-        "name": "shadcn",
-        "version": "1.0.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": true
     },
     "sharp": {
       "name": "sharp",
@@ -1576,20 +1558,6 @@
       "range": "1.0.0 - 1.2.1",
       "nodes": [
         "node_modules/source-map-js"
-      ],
-      "fixAvailable": true
-    },
-    "ts-morph": {
-      "name": "ts-morph",
-      "severity": "high",
-      "isDirect": false,
-      "via": [
-        "@ts-morph/common"
-      ],
-      "effects": [],
-      "range": "6.0.1 - 23.0.0 || 25.0.0 - 26.0.0",
-      "nodes": [
-        "node_modules/ts-morph"
       ],
       "fixAvailable": true
     },
@@ -1844,12 +1812,92 @@
             "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
           },
           "range": ">=7.0.0 <7.29.1"
+        },
+        {
+          "source": 1243078,
+          "name": "undici",
+          "dependency": "undici",
+          "title": "undici vulnerable to Denial of Service via unbounded memory in the EventSource parser",
+          "url": "https://github.com/advisories/GHSA-4qv8-2p9j-2685",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=7.0.0 <7.30.1"
+        },
+        {
+          "source": 1243081,
+          "name": "undici",
+          "dependency": "undici",
+          "title": "undici vulnerable to Subresource Integrity bypass via non-lowercase algorithm tokens",
+          "url": "https://github.com/advisories/GHSA-f72v-6w45-q472",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-178"
+          ],
+          "cvss": {
+            "score": 5.9,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N"
+          },
+          "range": ">=7.15.0 <7.30.1"
+        },
+        {
+          "source": 1243113,
+          "name": "undici",
+          "dependency": "undici",
+          "title": "undici vulnerable to Denial of Service via unhandled error on excessive content-encodings",
+          "url": "https://github.com/advisories/GHSA-xjj6-f33q-929c",
+          "severity": "high",
+          "cwe": [
+            "CWE-248",
+            "CWE-459"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": ">=7.18.0 <7.30.1"
         }
       ],
       "effects": [],
-      "range": "7.0.0 - 7.29.0",
+      "range": "7.0.0 - 7.30.0",
       "nodes": [
         "node_modules/undici"
+      ],
+      "fixAvailable": true
+    },
+    "zod": {
+      "name": "zod",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1243066,
+          "name": "zod",
+          "dependency": "zod",
+          "title": "Zod can exhaust memory while validating oversized constrained collections",
+          "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+          "severity": "high",
+          "cwe": [
+            "CWE-770"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<4.6.6"
+        }
+      ],
+      "effects": [
+        "shadcn"
+      ],
+      "range": "<4.6.6",
+      "nodes": [
+        "node_modules/zod"
       ],
       "fixAvailable": true
     }
@@ -1859,9 +1907,9 @@
       "info": 0,
       "low": 0,
       "moderate": 6,
-      "high": 17,
+      "high": 14,
       "critical": 2,
-      "total": 25
+      "total": 22
     },
     "dependencies": {
       "prod": 366,
