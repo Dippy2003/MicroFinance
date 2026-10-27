@@ -1349,7 +1349,7 @@
       "isDirect": false,
       "via": [
         {
-          "source": 1241232,
+          "source": 1243380,
           "name": "postcss-selector-parser",
           "dependency": "postcss-selector-parser",
           "title": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
@@ -1363,11 +1363,11 @@
             "score": 5.9,
             "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H"
           },
-          "range": "<7.1.6"
+          "range": ">=7.0.0 <7.1.6"
         }
       ],
       "effects": [],
-      "range": "<7.1.6",
+      "range": "7.0.0 - 7.1.5",
       "nodes": [
         "node_modules/postcss-selector-parser"
       ],
