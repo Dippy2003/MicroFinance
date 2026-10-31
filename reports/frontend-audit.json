@@ -171,6 +171,22 @@
       ],
       "fixAvailable": true
     },
+    "@ts-morph/common": {
+      "name": "@ts-morph/common",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "minimatch"
+      ],
+      "effects": [
+        "ts-morph"
+      ],
+      "range": ">=0.9.0",
+      "nodes": [
+        "node_modules/@ts-morph/common"
+      ],
+      "fixAvailable": true
+    },
     "baseline-browser-mapping": {
       "name": "baseline-browser-mapping",
       "severity": "moderate",
@@ -1035,6 +1051,37 @@
       ],
       "fixAvailable": true
     },
+    "minimatch": {
+      "name": "minimatch",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1244012,
+          "name": "minimatch",
+          "dependency": "minimatch",
+          "title": "minimatch has potential denial of service via globparts amplification",
+          "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+          "severity": "moderate",
+          "cwe": [
+            "CWE-405"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<11.0.1"
+        }
+      ],
+      "effects": [
+        "@ts-morph/common"
+      ],
+      "range": "<11.0.1",
+      "nodes": [
+        "node_modules/minimatch"
+      ],
+      "fixAvailable": true
+    },
     "nanoid": {
       "name": "nanoid",
       "severity": "high",
@@ -1540,6 +1587,7 @@
       "isDirect": true,
       "via": [
         "deepmerge",
+        "ts-morph",
         "zod"
       ],
       "effects": [],
@@ -1709,6 +1757,20 @@
       "range": "<=5.33.15",
       "nodes": [
         "node_modules/systeminformation"
+      ],
+      "fixAvailable": true
+    },
+    "ts-morph": {
+      "name": "ts-morph",
+      "severity": "moderate",
+      "isDirect": false,
+      "via": [
+        "@ts-morph/common"
+      ],
+      "effects": [],
+      "range": ">=10.0.2",
+      "nodes": [
+        "node_modules/ts-morph"
       ],
       "fixAvailable": true
     },
@@ -2145,10 +2207,10 @@
     "vulnerabilities": {
       "info": 0,
       "low": 1,
-      "moderate": 6,
+      "moderate": 9,
       "high": 15,
       "critical": 2,
-      "total": 24
+      "total": 27
     },
     "dependencies": {
       "prod": 366,
