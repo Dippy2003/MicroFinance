@@ -1,6 +1,23 @@
 {
   "auditReportVersion": 2,
   "vulnerabilities": {
+    "@dotenvx/dotenvx": {
+      "name": "@dotenvx/dotenvx",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "fdir",
+        "picomatch"
+      ],
+      "effects": [
+        "shadcn"
+      ],
+      "range": "1.2.0 - 2.3.3",
+      "nodes": [
+        "node_modules/@dotenvx/dotenvx"
+      ],
+      "fixAvailable": true
+    },
     "@hono/node-server": {
       "name": "@hono/node-server",
       "severity": "moderate",
@@ -189,15 +206,16 @@
     },
     "@ts-morph/common": {
       "name": "@ts-morph/common",
-      "severity": "moderate",
+      "severity": "high",
       "isDirect": false,
       "via": [
+        "fast-glob",
         "minimatch"
       ],
       "effects": [
         "ts-morph"
       ],
-      "range": "0.19.0 - 0.29.0",
+      "range": "0.2.0 - 0.29.0",
       "nodes": [
         "node_modules/@ts-morph/common"
       ],
@@ -422,6 +440,23 @@
       ],
       "fixAvailable": true
     },
+    "fast-glob": {
+      "name": "fast-glob",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "micromatch"
+      ],
+      "effects": [
+        "@ts-morph/common",
+        "shadcn"
+      ],
+      "range": ">=3.0.0",
+      "nodes": [
+        "node_modules/fast-glob"
+      ],
+      "fixAvailable": true
+    },
     "fast-uri": {
       "name": "fast-uri",
       "severity": "high",
@@ -613,6 +648,20 @@
       "range": "3.0.0 - 3.1.8",
       "nodes": [
         "node_modules/fast-uri"
+      ],
+      "fixAvailable": true
+    },
+    "fdir": {
+      "name": "fdir",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "picomatch"
+      ],
+      "effects": [],
+      "range": ">=5.2.1",
+      "nodes": [
+        "node_modules/fdir"
       ],
       "fixAvailable": true
     },
@@ -1113,6 +1162,22 @@
       ],
       "fixAvailable": true
     },
+    "micromatch": {
+      "name": "micromatch",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        "picomatch"
+      ],
+      "effects": [
+        "fast-glob"
+      ],
+      "range": ">=4.0.0",
+      "nodes": [
+        "node_modules/micromatch"
+      ],
+      "fixAvailable": true
+    },
     "minimatch": {
       "name": "minimatch",
       "severity": "moderate",
@@ -1432,6 +1497,40 @@
         "isSemVerMajor": false
       }
     },
+    "picomatch": {
+      "name": "picomatch",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1247710,
+          "name": "picomatch",
+          "dependency": "picomatch",
+          "title": "picomatch vulnerable to ReDoS through single-branch repeated extglobs",
+          "url": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf",
+          "severity": "high",
+          "cwe": [
+            "CWE-1333"
+          ],
+          "cvss": {
+            "score": 7.5,
+            "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+          },
+          "range": "<=4.0.7"
+        }
+      ],
+      "effects": [
+        "@dotenvx/dotenvx",
+        "fdir",
+        "micromatch"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/micromatch/node_modules/picomatch",
+        "node_modules/picomatch"
+      ],
+      "fixAvailable": true
+    },
     "postcss": {
       "name": "postcss",
       "severity": "high",
@@ -1648,6 +1747,8 @@
       "severity": "high",
       "isDirect": true,
       "via": [
+        "@dotenvx/dotenvx",
+        "fast-glob",
         "ts-morph",
         "zod"
       ],
@@ -1824,9 +1925,7 @@
       "via": [
         "@ts-morph/common"
       ],
-      "effects": [
-        "shadcn"
-      ],
+      "effects": [],
       "range": "18.0.0 - 27.0.2",
       "nodes": [
         "node_modules/ts-morph"
@@ -2262,10 +2361,10 @@
     "vulnerabilities": {
       "info": 0,
       "low": 0,
-      "moderate": 9,
-      "high": 15,
+      "moderate": 8,
+      "high": 21,
       "critical": 2,
-      "total": 26
+      "total": 31
     },
     "dependencies": {
       "prod": 366,
